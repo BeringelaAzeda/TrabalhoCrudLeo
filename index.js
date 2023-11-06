@@ -7,7 +7,7 @@ app.listen(3000,() => {
     console.log("Servidor Aberto na porta 3000")
 })
 const {pool,closepool} = require("./database/data")
-
+//Cadastra na tabela produto
 app.post("/cadastroProduto", async (req,res) => {
     try {
         pool.connect()
@@ -27,7 +27,7 @@ app.post("/cadastroProduto", async (req,res) => {
         closepool();
     }
 })
-
+//Cadastra na tabela categoria
 app.post("/cadastroCategoria", async (req,res) => {
     try {
         pool.connect()
@@ -46,7 +46,7 @@ app.post("/cadastroCategoria", async (req,res) => {
         closepool();
     }
 })
-
+//Atualiza um registro da tabela produto pelo id
 app.put("/atualizarProduto", async (req,res) => {
     try {
         pool.connect()
@@ -66,7 +66,7 @@ app.put("/atualizarProduto", async (req,res) => {
         closepool();
     }
 })
-
+//Atualiza um registro da tabela categoria pelo id
 app.put("/atualizarCategoria", async (req,res) => {
     try {
         pool.connect()
@@ -86,6 +86,7 @@ app.put("/atualizarCategoria", async (req,res) => {
     }
 })
 
+//Deleta um registro da tabela categoria pelo id
 app.delete("/deleteProduto", async (req,res) => {
     try {
         pool.connect()
@@ -106,6 +107,7 @@ app.delete("/deleteProduto", async (req,res) => {
     }
 })
 
+//Deleta um registro da tabela categoria pelo id
 app.delete("/deleteCategoria", async (req,res) => {
     try {
         pool.connect()
@@ -125,6 +127,7 @@ app.delete("/deleteCategoria", async (req,res) => {
     }
 })
 
+//Retorna todos os produtos cadastrado na tabela produto
 app.get("/getProduto", async (req,res) => {
     try {
         pool.connect()
@@ -144,6 +147,7 @@ app.get("/getProduto", async (req,res) => {
     }
 })
 
+//Retorna todos as categorias cadastradas na tabela categoria
 app.get("/getCategoria", async (req,res) => {
     try {
         pool.connect()
